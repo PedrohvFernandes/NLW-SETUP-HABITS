@@ -38,7 +38,7 @@ model HabitWeekDays {
   @@map("habit_week_days")
 }
 
-// Os dias da tabela, cada dia pode ter varios habitos: Segunda-feira03/01: beber agua e exercitar, Segunda-feira04/01: beber agua, caminhar e exercitar. 
+// Cada dia pode ter varios habitos completados: Segunda-feira03/01: beber agua e exercitar, Segunda-feira04/01: beber agua, caminhar e exercitar. Ou seja essa tabela armazena a referencia pro dia em que podemos ter varios habits completados na quele dia. Esse registro so é criado quando é completado um habito naquele dia, quando a pessoa completar outro no mesmo dia não é nescessario setar outra data, porque estamos armazenando somente a data e não o horario
 model Day {
   id   String   @id @default(uuid())
   date DateTime
@@ -49,7 +49,7 @@ model Day {
   @@map("days")
 }
 
-// A tabela pivot, que são os habitos daquele dia
+// A tabela pivot, que são os habitos daquele dia. Ou seja uma tabela de ralação
 model DayHabit {
   id String @id @default(uuid())
 
