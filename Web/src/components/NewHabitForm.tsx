@@ -58,7 +58,7 @@ export function NewHabitForm() {
         id="title"
         name="title"
         placeholder="Ex: Ler 30 minutos por dia"
-        className="p-4 rounded-lg mt-3 bg-zinc-800 text-white placeholder:text-zinc-400"
+        className="p-4 rounded-lg mt-3 transition-all duration-300 bg-zinc-800 text-white placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-violet-700 focus:ring-offset-2 focus:ring-offset-zinc-900"
         autoFocus
         value={title}
         onChange={event => {
@@ -75,11 +75,11 @@ export function NewHabitForm() {
           return (
             <Checkbox.Root
               key={day}
-              className="flex items-center gap-3 group"
+              className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-violet-700 focus:ring-offset-2 focus:ring-offset-bg hover:outline-none hover:ring-2 hover:ring-violet-700 hover:ring-offset-2 hover:ring-offset-bg transition-all duration-300 hover:p-2 focus:p-2 rounded-lg"
               onCheckedChange={() => handleToggleWeekDay(index)}
               checked={weekDays.includes(index)}
             >
-              <div className="h-8 w-8 rounded-lg flex items-center justify-center bg-zinc-900 border-2 border-zinc-800 group-data-[state=checked]:bg-green-500 group-data-[state=checked]:border-green-900">
+              <div className="h-8 w-8 rounded-lg flex items-center justify-center bg-zinc-900 border-2 border-zinc-800 group-data-[state=checked]:bg-green-500 group-data-[state=checked]:border-green-900 transition-all duration-300 group-focus:outline-none group-focus:ring-2 group-focus:ring-violet-700 group-focus:ring-offset-2 group-focus:ring-offset-bg group-hover:outline-none group-hover:ring-2 group-hover:ring-violet-700 group-hover:ring-offset-2 group-hover:ring-offset-bg">
                 <Checkbox.Indicator>
                   <Check size={20} className="text-white" />
                 </Checkbox.Indicator>
@@ -94,7 +94,7 @@ export function NewHabitForm() {
 
       <button
         type="submit"
-        className="mt-6 rounded-lg p-4 flex items-center justify-center gap-3 font-semibold bg-green-600 hover:bg-green-500 transition-all duration-300"
+        className="mt-6 rounded-lg p-4 flex items-center justify-center gap-3 font-semibold bg-green-600 hover:bg-green-500 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-green-700 focus:ring-offset-2 focus:ring-offset-bg hover:outline-none hover:ring-2 hover:ring-green-700 hover:ring-offset-2 hover:ring-offset-zinc-900"
       >
         {loading ? (
           <Spinner size={30} />
