@@ -1,5 +1,6 @@
 import cors from '@fastify/cors'
 import fastify from 'fastify'
+import { notificationsRoutes } from './notifications-routes'
 import { appRoute } from './route'
 
 const app = fastify()
@@ -8,6 +9,7 @@ app.register(cors, {
   origin: '*'
 })
 app.register(appRoute)
+app.register(notificationsRoutes)
 
 app.listen(
   {
